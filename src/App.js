@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import * as React from 'react';
+import ReactionButton from './components/reaction-button/reaction-button.component';
+import { ColourContext } from './context/ColourContext';
+import { GameOverTextContext } from './context/GameOverTextContext';
 
 function App() {
+  const [colour, setColour] = React.useState('bg-red-600');
+  const [message, setMessage] = React.useState('');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GameOverTextContext.Provider value={{message, setMessage}}>
+        <ColourContext.Provider value={{colour, setColour}}>
+          <ReactionButton />
+        </ColourContext.Provider>
+      </GameOverTextContext.Provider>
     </div>
   );
 }
