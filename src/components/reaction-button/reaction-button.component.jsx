@@ -32,8 +32,9 @@ function ReactionButton() {
   
   return (
     <div className="App">
+      <h1 className="text-2xl font-bold my-20 font-mono">Insurance Revolution Task</h1>
       <div>
-        <button className="inline-flex justify-center py-2 px-4 p-5 mt-20 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        <button className="inline-flex justify-center py-2 px-4 p-5 mt-5 border border-transparent shadow-2xl text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           onClick={() => {
             hasStarted = true;
             gameOver = false;
@@ -51,7 +52,7 @@ function ReactionButton() {
           ? 
             <GameOver /> 
           : 
-            <button className={`inline-flex justify-center p-10 mt-20 border border-transparent shadow-sm text-sm font-medium rounded-md text-white ${colour} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
+            <button className={`inline-flex justify-center p-20 mt-10 border border-transparent shadow-2xl text-sm font-medium rounded-md text-white ${colour} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
               disabled={!hasStarted}
               onClick={function() {
                 clicks.push({});
@@ -78,7 +79,7 @@ function ReactionButton() {
                 }
               }}
             >
-              {hasStarted ? <p style={{color: 'white'}}>Press Me!</p> : 'Wait for the colour to change and click!'}
+              {hasStarted ? <p style={{color: 'white'}}>Press Me!</p> : <div>Wait for the colour to change and click!<div />You have 5 attempts.</div>}
             </button>}
       </div>
       <h2 className="text-3xl font-bold my-5">{gameOver ? `Final Score: ${average}` : ''}</h2>
