@@ -1,13 +1,12 @@
 import * as React from 'react';
 import { ColourContext } from '../../context/ColourContext';
 import { GameOverTextContext } from '../../context/GameOverTextContext';
-import GameOver from '../../pages/game-over/game-over';
+import GameOver from '../game-over/game-over';
 
 var clickedTime, changeTime, reactionTime, total, average;
 var reactionTimeArray = [];
 var clicks = [];
 var count = [];
-
 var hasStarted = false;
 var gameOver = false;
 
@@ -26,7 +25,6 @@ function ReactionButton() {
       }
       clicks.shift()
       changeTime = Date.now();
-      
     }, time); 
   }
   
