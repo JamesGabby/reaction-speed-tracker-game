@@ -69,7 +69,7 @@ function ReactionButton() {
                   gameOver = true;
                   hasStarted = false;
                 } else if (clicks.length > 1) {
-                  average = 0;
+                  average = 'Disqualified';
                   setMessage('You clicked too early, please try again.');
                   gameOver = true;
                   hasStarted = false;
